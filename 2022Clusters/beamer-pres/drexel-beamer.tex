@@ -1,0 +1,198 @@
+% change the aspect ratio to 169 for 16:9 aspect ratio
+% otherwise remove option completely for 3:2 ratio.
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+
+\usetheme{CambridgeUS}
+
+\useinnertheme{rectangles}
+
+% Depending on whether you want dark or light
+% theme you can change the style file, 
+% drexel-light.tex for light theme and
+% drexel-dark.tex for dark theme
+\input{./styles/drexel-light.tex}
+
+\author{Sean C. Lewis}
+\title{From Galaxies to Stars: Bridging the Expanse}
+
+\date{\today} 
+\subject{Physics} 
+
+% depending on dark or light theme use _black or _white pdf for drexel logo.
+% These logos are obtained from https://drexel.edu/identity/drexel/logotypes/
+
+
+% Two graphics side by side
+%\titlegraphic{%
+%    \hfill
+%   \includegraphics[height=0.7cm]{../images/Drexel_horizontal_black.pdf}%
+%    \hfill%
+%    \includegraphics[height=1cm]{../images/EXO_logo.pdf}%
+%}
+
+%%%%% Only Drexel
+\titlegraphic{%
+    %\hfill
+    \includegraphics[height=0.7cm]{../images/Drexel_horizontal_black.pdf}%
+    %\includegraphics[height=0.7cm]{../images/Drexel_horizontal_white.pdf}%
+}
+
+
+\begin{document}
+
+\titlepage
+
+\section{Background}
+%
+\begin{frame}{Clouds in Reality and... Not}{What's the difference?}
+    \begin{columns}
+        \begin{column}{0.35\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/jwst.jpg} \\
+                NASA; Carina Nebula
+                \label{fig:jwst}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            %
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/josh_torch_run.jpeg} \\
+                Wall et al. 2020
+                \label{fig:torch}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+%
+%
+%
+%
+%
+\begin{frame}{The Big Problems}{Resolution \& Initial Conditions}
+    \begin{itemize}
+        \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \item []
+    \end{itemize}
+\end{frame}
+%
+%
+%
+%
+% 
+\begin{frame}{The Big Problems}{Resolution \& Initial Conditions}
+    \begin{itemize}
+        \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \item Creating our own isolated clouds from scratch? ``Creative liberties..."
+        % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
+    \end{itemize}
+\end{frame}
+%
+%
+%
+\section{Motivation}
+%
+%
+%
+%
+\begin{frame}{Stars From ``Realistic" Clouds}{}
+    \begin{itemize}
+        \item Clouds that formed under the influence of galactic dynamics.
+        \item []
+        \item Track dynamics and feedback of individual stars.
+        \item []
+        \item High resolution to quantify star-gas interactions.
+        % With Torch, we can already do the last two points.
+        % So what we really need are some clouds from galactic simulations
+    \end{itemize}
+\end{frame}
+%
+%
+%
+\section{Methods}
+%
+%
+% 
+\begin{frame}{Clouds from Galactic Simulations}
+	\begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/AREPO_galaxy.png} \\
+                GMC identification [Li, H. et al. 2020]
+                \label{fig:arepo_galaxy}
+	\end{figure}
+	% Also have Cloud-Factory Rowen Smith (2019)
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}{From AREPO to FLASH} {(1st attempt)}
+    \begin{columns}
+        \begin{column}{0.35\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/AREPO_cloud.png} \\
+                Cloud from raw AREPO data \\
+                -
+                \label{fig:voronoi_example}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            %
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/cloud_in_cell_projection_lvl8.png} \\
+                Cloud-in-cell mapping onto AMR FLASH grid
+                \label{fig:amr_example}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+%
+%
+%
+%
+%
+\begin{frame}{Voronoi Mesh to AMR Grid} %{Subtitle not required in this slide}
+    \begin{columns}
+        \begin{column}{0.39\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/voronoi_stats.png}
+                \caption{Voronoi mesh from 20 points}
+                \label{fig:voronoi_example}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.37\textwidth}
+            %
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/amr_stats.png}
+                \caption{AMR grid from 20 points}
+                \label{fig:amr_example}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+%
+%
+%
+%
+%
+\begin{frame}{VorAMR: Logic path}
+	\begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/voramr_logic.png} \\
+                \label{fig:voramr_logic}
+	\end{figure}
+	% Also have Cloud-Factory Rowen Smith (2019)
+\end{frame}
+\end{document}
+
