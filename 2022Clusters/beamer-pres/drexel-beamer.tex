@@ -18,7 +18,7 @@
 \input{./styles/drexel-light.tex}
 
 \author{Sean C. Lewis}
-\title{From Galaxies to Stars: Bridging the Expanse}
+\title{Galaxies and Stars: Bridging the Expanse}
 
 \date{\today} 
 \subject{Physics} 
@@ -49,7 +49,44 @@
 
 \section{Background}
 %
-\begin{frame}{Clouds in Reality and... Not}{What's the difference?}
+\begin{frame}{Torch}{And Its Next Steps}
+    \begin{itemize}
+        \item Couples N-body, stellar evolution, and feedback in \texttt{AMUSE} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.
+        \item []
+        \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Torch}{And Its Next Steps}
+    \begin{columns}
+        \begin{column}{0.42\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/all_runs_density_grid_time_labels.png} \\
+                Lewis et al. (in prep)
+                \label{fig:jwst}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            %
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/josh_density_grid.jpeg} \\
+                Wall et al. 2020
+                \label{fig:torch}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+%
+%
+%
+%
+%
+\begin{frame}{Clouds in Reality and... Not}{}
     \begin{columns}
         \begin{column}{0.35\textwidth}
             \begin{figure}[h!]
@@ -79,6 +116,7 @@
     \begin{itemize}
         \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
         \item []
+        \item []
     \end{itemize}
 \end{frame}
 %
@@ -89,6 +127,7 @@
 \begin{frame}{The Big Problems}{Resolution \& Initial Conditions}
     \begin{itemize}
         \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \item []
         \item Creating our own isolated clouds from scratch? ``Creative liberties..."
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
@@ -192,7 +231,24 @@
                 \includegraphics[width=\linewidth]{../images/voramr_logic.png} \\
                 \label{fig:voramr_logic}
 	\end{figure}
-	% Also have Cloud-Factory Rowen Smith (2019)
 \end{frame}
+%
+%
+%
+%
+%
+% Conversion from Voronoi to AMR grid also allows for better visualizations in yt (which approximates voronoi mesh as sph kernels)
+\begin{frame}{VorAMR: The Big Wins}{}
+    \begin{itemize}
+    	\item Significantly expands Torch's horizon and "completes" Torch.
+	\item []
+    	\item Opens wide avenue of collaboration; code bases do not have to be exclusive! 
+	\item []
+	\item More accurate visualizations (no more estimating Voronoi meshes as SPH kernels in \texttt{yt}).
+        % With Torch, we can already do the last two points.
+        % So what we really need are some clouds from galactic simulations
+    \end{itemize}
+\end{frame}
+
 \end{document}
 
