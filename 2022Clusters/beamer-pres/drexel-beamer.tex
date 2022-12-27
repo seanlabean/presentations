@@ -18,7 +18,7 @@
 \input{./styles/drexel-light.tex}
 
 \author{Sean C. Lewis}
-\title{Galaxies and Stars: Bridging the Expanse}
+\title{Effects of Early Forming Massive Stars}
 
 \date{\today} 
 \subject{Physics} 
@@ -47,76 +47,120 @@
 
 \titlepage
 
-\section{Background}
+\section{Hypothesis}
+\begin{frame}{Early Forming Massive Stars}{Disruption of gas collapse, star formation, and cluster assembly}
+    \begin{itemize}
+        \only<1,2>{\item [] blah blah}
+        \only<1>{\item []}
+        \only<2>{\item [] la dee dah}
+    \end{itemize}
+\end{frame}
+
+\section{Torch}
 %
-\begin{frame}{Torch}{And Its Next Steps}
+\begin{frame}{Torch}{Stars from gas}
     \begin{itemize}
         \item Couples N-body, stellar evolution, and feedback in \texttt{AMUSE} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.
         \item []
         \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
+        \item []
+        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa (2001) IMF.
     \end{itemize}
 \end{frame}
 
 
 
-
-\begin{frame}{Torch}{And Its Next Steps}
+\section{Experiment}
+\begin{frame}{A Controlled Experiment}{}
     \begin{columns}
-        \begin{column}{0.42\textwidth}
+        \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=\linewidth]{../images/all_runs_density_grid_time_labels.png} \\
-                Lewis et al. (in prep)
-                \label{fig:jwst}
+                \includegraphics[width=\linewidth]{../images/density_grid.png} \\
+                Lewis et al. in prep
+                \label{fig:density}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.38\textwidth}
+            
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/paper1-snapshot-volume-render.png} \\
+		Lewis et al. in prep
+                \label{fig:volume}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+
+\section{Results}
+
+\begin{frame}{Effects on Gas}{}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/global_gas_total_energy_fixes.png} \\
+                \label{fig:energy}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/ionized_H_slice.png} \\
+                \label{fig:ionized}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+
+
+\begin{frame}{Effects on Gas Accretion and Star Formation}{}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/cumulative_stellar_mass_fixes.png} \\
+                \label{fig:cum_mass}
             \end{figure}
         \end{column}
         \begin{column}{0.4\textwidth}
-            %
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=\linewidth]{../images/josh_density_grid.jpeg} \\
-                Wall et al. 2020
-                \label{fig:torch}
+                \includegraphics[width=\linewidth]{../images/sink_accretion_star_formation_rates.png} \\
+                \label{fig:sink_star_rates}
             \end{figure}
         \end{column}
     \end{columns}
 \end{frame} 
-%
-%
-%
-%
-%
-\begin{frame}{Clouds in Reality and... Not}{}
+
+
+
+\begin{frame}{Effects on Star Clustering, Cluster Assembly}{}
     \begin{columns}
-        \begin{column}{0.35\textwidth}
+        \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=\linewidth]{../images/jwst.jpg} \\
-                NASA; Carina Nebula
-                \label{fig:jwst}
+                \includegraphics[width=\linewidth]{../images/cluster_grid.png} \\
+                \label{fig:cluster_grid}
             \end{figure}
         \end{column}
-        \begin{column}{0.35\textwidth}
-            %
-            \begin{figure}[h!]
-                \centering
-                \includegraphics[width=\linewidth]{../images/josh_torch_run.jpeg} \\
-                Wall et al. 2020
-                \label{fig:torch}
-            \end{figure}
+        \begin{column}{0.45\textwidth}
+	
         \end{column}
     \end{columns}
 \end{frame} 
-%
-%
-%
-%
-%
-\begin{frame}{The Big Problems}{Resolution \& Initial Conditions}
+
+
+
+\begin{frame}{Effects of Early Forming Massive Stars}{}
     \begin{itemize}
-        \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \item Significantly disrupt the natal gas structure, resulting in fast evacuation from the star forming region.
         \item []
+        \item The star formation rate is suppressed, reducing the total mass of stars formed.
         \item []
+        \item Early forming massive stars stifle the hierarchical assembly process of massive star clusters, instead promoting the formation of spatially separate and energetically unbound subclusters.
+        % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
 \end{frame}
 %
@@ -124,7 +168,7 @@
 %
 %
 % 
-\begin{frame}{The Big Problems}{Resolution \& Initial Conditions}
+\begin{frame}{The Problem with Initial Conditions}{}
     \begin{itemize}
         \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
         \item []
@@ -140,21 +184,21 @@
 %
 %
 %
-\begin{frame}{Stars From ``Realistic" Clouds}{}
-    \begin{itemize}
-        \item Clouds that formed under the influence of galactic dynamics.
-        \item []
-        \item Track dynamics and feedback of individual stars.
-        \item []
-        \item High resolution to quantify star-gas interactions.
+%\begin{frame}{Stars From ``Realistic" Clouds}{}
+%    \begin{itemize}
+%        \item Clouds that formed under the influence of galactic dynamics.
+%        \item []
+%        \item Track dynamics and feedback of individual stars.
+%        \item []
+%        \item High resolution to quantify star-gas interactions.
         % With Torch, we can already do the last two points.
         % So what we really need are some clouds from galactic simulations
-    \end{itemize}
-\end{frame}
+%    \end{itemize}
+%\end{frame}
 %
 %
 %
-\section{Methods}
+\section{VorAMR}
 %
 %
 % 
@@ -172,14 +216,14 @@
 %
 %
 %
-\begin{frame}{From AREPO to FLASH} {(1st attempt)}
+\begin{frame}{From AREPO to FLASH} {Try CIC Mapping?}
     \begin{columns}
         \begin{column}{0.35\textwidth}
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/AREPO_cloud.png} \\
                 Cloud from raw AREPO data \\
-                -
+                represented using SPH kernels
                 \label{fig:voronoi_example}
             \end{figure}
         \end{column}
@@ -225,6 +269,32 @@
 %
 %
 %
+%\begin{frame}{Clouds in Reality and... Not}{}
+%    \begin{columns}
+%        \begin{column}{0.35\textwidth}
+%            \begin{figure}[h!]
+%                \centering
+%                \includegraphics[width=\linewidth]{../images/jwst.jpg} \\
+%                NASA; Carina Nebula
+%                \label{fig:jwst}
+%            \end{figure}
+%        \end{column}
+%        \begin{column}{0.35\textwidth}
+%            %
+%            \begin{figure}[h!]
+%                \centering
+%                \includegraphics[width=\linewidth]{../images/josh_torch_run.jpeg} \\
+%                Wall et al. 2020
+%                \label{fig:torch}
+%            \end{figure}
+%        \end{column}
+%    \end{columns}
+%\end{frame} 
+%
+%
+%
+%
+%
 \begin{frame}{VorAMR: Logic path}
 	\begin{figure}[h!]
                 \centering
@@ -240,7 +310,7 @@
 % Conversion from Voronoi to AMR grid also allows for better visualizations in yt (which approximates voronoi mesh as sph kernels)
 \begin{frame}{VorAMR: The Big Wins}{}
     \begin{itemize}
-    	\item Significantly expands Torch's horizon and "completes" Torch.
+    	\item Significantly expands Torch's horizon and moves Torch to "completion".
 	\item []
     	\item Opens wide avenue of collaboration; code bases do not have to be exclusive! 
 	\item []
@@ -248,6 +318,14 @@
         % With Torch, we can already do the last two points.
         % So what we really need are some clouds from galactic simulations
     \end{itemize}
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}{}
+	\centering Thank You! \\ - \\ Questions?
 \end{frame}
 
 \end{document}
