@@ -67,7 +67,7 @@
         \item []
         \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
         \item []
-        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa (2001) IMF.
+        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa IMF.$^[$\footnote{Kroupa 2001}$^]$
     \end{itemize}
 \end{frame}
 
@@ -80,16 +80,16 @@
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/density_grid.png} \\
-                Lewis et al. in prep
+                Lewis et al. 2023
                 \label{fig:density}
             \end{figure}
         \end{column}
-        \begin{column}{0.38\textwidth}
+        \begin{column}{0.35\textwidth}
             
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/paper1-snapshot-volume-render.png} \\
-		Lewis et al. in prep
+		
                 \label{fig:volume}
             \end{figure}
         \end{column}
@@ -98,7 +98,7 @@
 
 \section{Results}
 
-\begin{frame}{Effects on Gas}{}
+\begin{frame}{Effects on Gas Energy}{}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
@@ -120,33 +120,20 @@
 
 \begin{frame}{Effects on Gas Accretion and Star Formation}{}
     \begin{columns}
-        \only<1>{
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
-                %\centering
+                Gas Satisfying Jeans Criterion
+                \includegraphics[width=\linewidth]{../images/jeans_gas_mass.png} \\
+                \label{fig:jeans_mass}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[h!]
+            	Cumulative Stellar Mass
                 \includegraphics[width=\linewidth]{../images/cumulative_stellar_mass_fixes.png} \\
                 \label{fig:cum_mass}
             \end{figure}
         \end{column}
-        \begin{column}{0.45\textwidth}
-        \end{column}
-        }
-        \only<2>{
-        \begin{column}{0.45\textwidth}
-            \begin{figure}[h!]
-                %\centering
-                \includegraphics[width=\linewidth]{../images/cumulative_stellar_mass_fixes.png} \\
-                \label{fig:cum_mass}
-            \end{figure}
-        \end{column}
-        \begin{column}{0.45\textwidth}
-	    Without early forming massive stars,
-	    \begin{itemize}
-	        \item More gas is converted to stars.
-	        \item More stars form more quickly.
-	    \end{itemize}
-        \end{column}
-        }
     \end{columns}
 \end{frame} 
 
@@ -193,8 +180,8 @@
         \end{column}
         \begin{column}{0.45\textwidth}
             \begin{itemize}
-              \item blah
-              \item blah
+              \item DBSCAN to identify cluster with at least 50\% bound members and 100~M$_\odot$ at 2$\tau_{\rm ff}$.
+              \item Clusters in runs with early massive stars are less massive and more fragmented compared to the fiducial run.  
             \end{itemize}
 	    \begin{table}[!htb]
             	\tiny
@@ -221,11 +208,11 @@
 
 \begin{frame}{Effects of Early Forming Massive Stars}{}
     \begin{itemize}
-        \item Significantly disrupt the natal gas structure, resulting in fast evacuation from the star forming region.
+        \item Significantly disrupt the natal gas structure, resulting in premature unbinding of GMC.
         \item []
-        \item The star formation rate is suppressed, reducing the total mass of stars formed.
+        \item The star formation rate per free-fall time is suppressed by up to a factor of seven, reducing the total mass of stars formed.
         \item []
-        \item Early forming massive stars stifle the hierarchical assembly process of massive star clusters, instead promoting the formation of spatially separate and energetically unbound subclusters.
+        \item Stifle the hierarchical assembly process of massive star clusters, instead promoting the formation of spatially separate and more loosely bound subclusters.
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
 \end{frame}
@@ -272,7 +259,7 @@
 	\begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/AREPO_galaxy.png} \\
-                GMC identification [Li, H. et al. 2020]
+                GMC identification\footnote{Li, H. et al. 2020}
                 \label{fig:arepo_galaxy}
 	\end{figure}
 	% Also have Cloud-Factory Rowen Smith (2019)
@@ -309,22 +296,38 @@
 %
 %
 %
+\begin{frame}
+    \centering
+    \only<1>{\begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/voronoi_mesh.png}
+    \end{figure}}
+    \only<2>{\begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/voronoi_centers.png}
+    \end{figure}}
+    \only<3>{\begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/amr_grid_from_voronoi.png}
+    \end{figure}}
+    \only<4>{\begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
+    \end{figure}}
+\end{frame}
+
 \begin{frame}{Voronoi Mesh to AMR Grid} %{Subtitle not required in this slide}
     \begin{columns}
-        \begin{column}{0.39\textwidth}
+        \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=\linewidth]{../images/voronoi_stats.png}
-                \caption{Voronoi mesh from 20 points}
+                \includegraphics[width=\linewidth]{../images/voronoi_mesh.png}
+                %\caption{Voronoi mesh from 20 points}
                 \label{fig:voronoi_example}
             \end{figure}
         \end{column}
-        \begin{column}{0.37\textwidth}
+        \begin{column}{0.44\textwidth}
             %
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=\linewidth]{../images/amr_stats.png}
-                \caption{AMR grid from 20 points}
+                \includegraphics[width=\linewidth]{../images/amr_grid_from_voronoi.png}
+                %\caption{AMR grid from 20 points}
                 \label{fig:amr_example}
             \end{figure}
         \end{column}
