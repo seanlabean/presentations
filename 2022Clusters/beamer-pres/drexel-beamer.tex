@@ -48,32 +48,44 @@
 
 \titlepage
 
-\section{Hypothesis}
+%\section{Hypothesis}
 \begin{frame}{Early Forming Massive Stars}{Disruption of gas collapse, star formation, and cluster assembly}
     \begin{itemize}
         \only<1,2,3,4>{\item The feedback from massive stars likely dominates the self-regulation of star formation.}
+        \only<1>{\item [] \item [] \item[] \item []}
         \only<2,3,4>{\item Gas evacuation (via stellar feedback) is crucial to the completion of star cluster assembly.\footnote{Bressert et al. 2010; Longmore  et al. 2014; Grudi\'c et al. 2018; Dobbs et al. 2022}}
-        \only<3,4>{\item \emph{How} gas is removed (rapidly, or slowly) may affect cluster structure.\footnote{Smith et al. 2013; Portegies Zwart et al. 2010; Banjeree \& Kroupa 2017}}
-        \only<3,4>{\item []}
+        \only<2>{\item [] \item [] \item []}
+        \only<3,4>{\item \emph{How} gas is removed (rapidly, or slowly) may affect cluster structure.\footnote{Portegies Zwart et al. 2010; Smith et al. 2013; Banjeree \& Kroupa 2017}}
+        \only<3>{\item [] \item []}
         \only<4>{\item What about \emph{when} massive stars form? Using our computational model we test the effects of early forming massive stars.}
     \end{itemize}
 \end{frame}
 
-\section{Torch}
+\section{Computational Framework}
 %
 \begin{frame}{Torch}{Stars from gas}
     \begin{itemize}
-        \item Couples N-body, stellar evolution, and feedback in \texttt{AMUSE} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.
+        \only<1,2,3>{
+        \item Torch\footnote{Wall et al. 2019, 2020} couples N-body, stellar evolution, and feedback in \texttt{AMUSE}\footnote{Portegies Zwart et al. 2009, 2013; Pelupessy et al. 2013; Portegies Zwart \& McMillan 2019} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.\footnote{Fryxell et al. 2000}
         \item []
+        }
+        \only<1>{\item [] \item[] \item [] \item []}
+        \only<2,3>{
         \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
         \item []
-        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa IMF.$^[$\footnote{Kroupa 2001}$^]$
+        }
+        \only<2>{\item [] \item []}
+        \only<3>{
+        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa IMF.\footnote{Kroupa 2001}
+        }
     \end{itemize}
 \end{frame}
 
+%    \let\thefootnote\relax\footnotetext{\texttt{AMUSE} - Portegies Zwart et al. 2009, 2013; Pelupessy et al. 2013; Portegies Zwart \& McMillan 2019}
+%    \let\thefootnote\relax\footnotetext{\texttt{FLASH} - Fryxell et al. 2000}
 
 
-\section{Experiment}
+\section{Lewis et al. 2023}
 \begin{frame}{A Controlled Experiment}{}
     \begin{columns}
         \begin{column}{0.45\textwidth}
@@ -89,14 +101,14 @@
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/paper1-snapshot-volume-render.png} \\
-		
+		.
                 \label{fig:volume}
             \end{figure}
         \end{column}
     \end{columns}
 \end{frame} 
 
-\section{Results}
+\section{Lewis et al. 2023}
 
 \begin{frame}{Effects on Gas Energy}{}
     \begin{columns}
@@ -180,9 +192,12 @@
         \end{column}
         \begin{column}{0.45\textwidth}
             \begin{itemize}
-              \item DBSCAN to identify cluster with at least 50\% bound members and 100~M$_\odot$ at 2$\tau_{\rm ff}$.
-              \item Clusters in runs with early massive stars are less massive and more fragmented compared to the fiducial run.  
+              \only<2,3>{\item DBSCAN to identify cluster with at least 50\% bound members and 100~M$_\odot$ at 2$\tau_{\rm ff}$.}
+              \only<1>{\item [] \item [] \item [] \item [] \item [] \item []}
+              \only<2>{\item [] \item [] \item []}
+              \only<3>{\item Clusters in runs with early massive stars are less massive and more fragmented compared to the fiducial run.}
             \end{itemize}
+            \only<1,2,3>{
 	    \begin{table}[!htb]
             	\tiny
  		%\centering
@@ -200,6 +215,7 @@
   			\hline
  		\end{tabular}
 	    \end{table}
+	    }
         \end{column}
     \end{columns}
 \end{frame} 
@@ -208,11 +224,19 @@
 
 \begin{frame}{Effects of Early Forming Massive Stars}{}
     \begin{itemize}
+        \only<1,2,3>{
         \item Significantly disrupt the natal gas structure, resulting in premature unbinding of GMC.
         \item []
+        }
+        \only<1>{\item [] \item [] \item [] \item [] \item []}
+        \only<2,3>{
         \item The star formation rate per free-fall time is suppressed by up to a factor of seven, reducing the total mass of stars formed.
         \item []
+        }
+        \only<2>{\item [] \item []}
+        \only<3>{
         \item Stifle the hierarchical assembly process of massive star clusters, instead promoting the formation of spatially separate and more loosely bound subclusters.
+        }
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
 \end{frame}
@@ -233,12 +257,16 @@
 	      \includegraphics[width=0.7\linewidth]{../images/clouds.png} 
 	\end{figure}
 	}
+    \only<2,3>{
     \begin{itemize}
-        \only<2,3>{\item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.}
+        \only<2,3>{\item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
         \item []
+        }
+        \only<2>{\item []}
         \only<3>{\item Creating our own isolated clouds from scratch? ``Creative liberties..."}
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
+    }
 \end{frame}
 %
 %
@@ -400,11 +428,19 @@
 % Conversion from Voronoi to AMR grid also allows for better visualizations in yt (which approximates voronoi mesh as sph kernels)
 \begin{frame}{VorAMR: The Big Wins}{}
     \begin{itemize}
-    	\item Provides a novel way to visualize Voronoi mesh-based hydrodynamical data.
+    	\only<1,2,3>{
+	\item Provides a novel way to visualize Voronoi mesh-based hydrodynamical data.
 	\item []
-    	\item Represents a critical linkage in the star cluster simulation pipeline which will allow \texttt{Torch} to use realistic GMC initial conditions.
+	}
+	\only<1>{\item [] \item [] \item [] \item []}
+    	\only<2,3>{
+	\item Represents a critical linkage in the star cluster simulation pipeline which will allow \texttt{Torch} to use realistic GMC initial conditions.
 	\item []
+	}
+	\only<2>{\item []}
+	\only<3>{
 	\item Provides an avenue for increased collaboration between entrenched research groups.
+	}
         % With Torch, we can already do the last two points.
         % So what we really need are some clouds from galactic simulations
     \end{itemize}
@@ -415,7 +451,10 @@
 %
 %
 \begin{frame}{}
-	\centering Thank You! \\ - \\ Questions?
+	\centering Thank You! \\ - \\ Questions? \\
+	~ \\
+	\includegraphics[width=0.5cm]{../images/twitter_icon.jpeg}~ @sean\_phys \\
+	 \includegraphics[width=0.5cm]{../images/gmail_icon.jpeg}~ sean.phys@gmail.com
 \end{frame}
 
 \begin{frame}{Appendix}
