@@ -216,23 +216,30 @@
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
 \end{frame}
+
+%
+%
+%
+\section{Realistic Initial Conditions}
 %
 %
 %
 %
 % 
 \begin{frame}{The Problem with Initial Conditions}{}
+    	\only<1>{
+	\begin{figure}[h!]
+	      \centering
+	      \includegraphics[width=0.7\linewidth]{../images/clouds.png} 
+	\end{figure}
+	}
     \begin{itemize}
-        \item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \only<2,3>{\item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.}
         \item []
-        \item Creating our own isolated clouds from scratch? ``Creative liberties..."
+        \only<3>{\item Creating our own isolated clouds from scratch? ``Creative liberties..."}
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
 \end{frame}
-%
-%
-%
-\section{Motivation}
 %
 %
 %
@@ -269,33 +276,6 @@
 %
 %
 %
-\begin{frame}{From AREPO to FLASH} {Try CIC Mapping?}
-    \begin{columns}
-        \begin{column}{0.35\textwidth}
-            \begin{figure}[h!]
-                \centering
-                \includegraphics[width=\linewidth]{../images/AREPO_cloud.png} \\
-                Cloud from raw AREPO data \\
-                represented using SPH kernels
-                \label{fig:voronoi_example}
-            \end{figure}
-        \end{column}
-        \begin{column}{0.35\textwidth}
-            %
-            \begin{figure}[h!]
-                \centering
-                \includegraphics[width=\linewidth]{../images/cloud_in_cell_projection_lvl8.png} \\
-                Cloud-in-cell mapping onto AMR FLASH grid
-                \label{fig:amr_example}
-            \end{figure}
-        \end{column}
-    \end{columns}
-\end{frame} 
-%
-%
-%
-%
-%
 %\begin{frame}
 %    \centering
 %    \only<1>{\begin{figure}[h!]
@@ -327,13 +307,25 @@
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/amr_grid_from_voronoi.png}
-                %\caption{AMR grid from 20 points}
                 \label{fig:amr_example}
             \end{figure}
         \end{column}
     \end{columns}
 \end{frame} 
-
+%
+%
+%
+%
+\begin{frame}
+    \centering
+    \begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
+    \end{figure}
+\end{frame}
+%
+%
+%
+%
 \begin{frame}{Voronoi Mesh to AMR Grid} %{Subtitle not required in this slide}
     \begin{columns}
         \begin{column}{0.3\textwidth}
@@ -363,14 +355,6 @@
         \end{column}
     \end{columns}
 \end{frame} 
-
-\begin{frame}
-    \centering
-    \begin{figure}[h!]
-        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
-    \end{figure}
-\end{frame}
-%
 %
 %
 %
