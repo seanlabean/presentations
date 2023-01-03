@@ -296,21 +296,21 @@
 %
 %
 %
-\begin{frame}
-    \centering
-    \only<1>{\begin{figure}[h!]
-        \includegraphics[width=0.5\linewidth]{../images/voronoi_mesh.png}
-    \end{figure}}
-    \only<2>{\begin{figure}[h!]
-        \includegraphics[width=0.5\linewidth]{../images/voronoi_centers.png}
-    \end{figure}}
-    \only<3>{\begin{figure}[h!]
-        \includegraphics[width=0.5\linewidth]{../images/amr_grid_from_voronoi.png}
-    \end{figure}}
-    \only<4>{\begin{figure}[h!]
-        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
-    \end{figure}}
-\end{frame}
+%\begin{frame}
+%    \centering
+%    \only<1>{\begin{figure}[h!]
+%        \includegraphics[width=0.5\linewidth]{../images/voronoi_mesh.png}
+%    \end{figure}}
+%    \only<2>{\begin{figure}[h!]
+%        \includegraphics[width=0.5\linewidth]{../images/voronoi_centers.png}
+%    \end{figure}}
+%    \only<3>{\begin{figure}[h!]
+%        \includegraphics[width=0.5\linewidth]{../images/amr_grid_from_voronoi.png}
+%    \end{figure}}
+%    \only<4>{\begin{figure}[h!]
+%        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
+%    \end{figure}}
+%\end{frame}
 
 \begin{frame}{Voronoi Mesh to AMR Grid} %{Subtitle not required in this slide}
     \begin{columns}
@@ -333,6 +333,43 @@
         \end{column}
     \end{columns}
 \end{frame} 
+
+\begin{frame}{Voronoi Mesh to AMR Grid} %{Subtitle not required in this slide}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/voronoi_mesh.png}
+                %\caption{Voronoi mesh from 20 points}
+                \label{fig:voronoi_example}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            %
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/amr_grid_from_voronoi.png}
+                %\caption{AMR grid from 20 points}
+                \label{fig:amr_example}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+                \begin{figure}[h!]
+                \centering
+                \includegraphics[width=\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
+                %\caption{AMR grid from 20 points}
+                \label{fig:amr_example}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+
+\begin{frame}
+    \centering
+    \begin{figure}[h!]
+        \includegraphics[width=0.5\linewidth]{../images/VorAMR_hdf5_chk_0001_Projection_z_dens.png}
+    \end{figure}
+\end{frame}
 %
 %
 %
@@ -379,11 +416,11 @@
 % Conversion from Voronoi to AMR grid also allows for better visualizations in yt (which approximates voronoi mesh as sph kernels)
 \begin{frame}{VorAMR: The Big Wins}{}
     \begin{itemize}
-    	\item Significantly expands Torch's horizon and moves Torch to "completion".
+    	\item Provides a novel way to visualize Voronoi mesh-based hydrodynamical data.
 	\item []
-    	\item Opens wide avenue of collaboration; code bases do not have to be exclusive! 
+    	\item Represents a critical linkage in the star cluster simulation pipeline which will allow \texttt{Torch} to use realistic GMC initial conditions.
 	\item []
-	\item More accurate visualizations (no more estimating Voronoi meshes as SPH kernels in \texttt{yt}).
+	\item Provides an avenue for increased collaboration between entrenched research groups.
         % With Torch, we can already do the last two points.
         % So what we really need are some clouds from galactic simulations
     \end{itemize}
