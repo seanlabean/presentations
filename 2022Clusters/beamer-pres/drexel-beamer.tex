@@ -18,8 +18,9 @@
 % drexel-dark.tex for dark theme
 \input{./styles/drexel-light.tex}
 
-\author{Sean C. Lewis}
-\title{Effects of Early Forming Massive Stars}
+\author{Sean C. Lewis, \\Stephen McMillan, Mordecai-Mark Mac Low, Claude Cournoyer-Cloutier, Brooke Polak, Aaron Tran, Martijn Wilhelm, Alison Sills, Ralf Klessen, Joshua Wall}
+\title{Star Cluster Formation: \\The Effects of Early Forming Massive Stars and \\Building a Bridge Between Voronoi Mesh and Block-Structured Codes}
+
 
 \date{\today} 
 \subject{Physics} 
@@ -52,47 +53,47 @@
 \begin{frame}{Early Forming Massive Stars}{Disruption of gas collapse, star formation, and cluster assembly}
     \begin{itemize}
         \only<1,2,3,4>{\item The feedback from massive stars likely dominates the self-regulation of star formation.}
-        \only<1>{\item [] \item [] \item[] \item []}
-        \only<2,3,4>{\item Gas evacuation (via stellar feedback) is crucial to the completion of star cluster assembly.\footnote{Bressert et al. 2010; Longmore  et al. 2014; Grudi\'c et al. 2018; Dobbs et al. 2022}}
-        \only<2>{\item [] \item [] \item []}
-        \only<3,4>{\item \emph{How} gas is removed (rapidly, or slowly) may affect cluster structure.\footnote{Portegies Zwart et al. 2010; Smith et al. 2013; Banjeree \& Kroupa 2017}}
-        \only<3>{\item [] \item []}
-        \only<4>{\item What about \emph{when} massive stars form? Using our computational model we test the effects of early forming massive stars.}
+        \only<1>{\item [] \item [] \item[]}% \item []}
+        \only<2,3,4>{\item Gas evacuation (via stellar feedback) is crucial to the completion of star cluster assembly.\footnote{Bressert et al. (2010); Longmore  et al. (2014); Grudi\'c et al. (2018); Dobbs et al. (2022)}}
+        \only<2>{\item [] \item []}% \item []}
+        \only<3,4>{\item \emph{How} gas is removed (rapidly, or slowly) may affect cluster structure.\footnote{Portegies Zwart et al. (2010); Smith et al. (2013); Banjeree \& Kroupa (2017)}}
+        \only<3>{\item []}% \item []}
+        \only<4>{\item What about \emph{when} massive stars form?}% Using our computational model we test the effects of early forming massive stars.}
     \end{itemize}
 \end{frame}
 
-\section{Computational Framework}
+%\section{Computational Framework}
 %
-\begin{frame}{Torch}{Stars from gas}
-    \begin{itemize}
-        \only<1,2,3>{
-        \item Torch\footnote{Wall et al. 2019, 2020} couples N-body, stellar evolution, and feedback in \texttt{AMUSE}\footnote{Portegies Zwart et al. 2009, 2013; Pelupessy et al. 2013; Portegies Zwart \& McMillan 2019} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.\footnote{Fryxell et al. 2000}
-        \item []
-        }
-        \only<1>{\item [] \item[] \item [] \item []}
-        \only<2,3>{
-        \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
-        \item []
-        }
-        \only<2>{\item [] \item []}
-        \only<3>{
-        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa IMF.\footnote{Kroupa 2001}
-        }
-    \end{itemize}
-\end{frame}
+%\begin{frame}{Torch}{Stars from gas}
+%    \begin{itemize}
+%        \only<1,2,3>{
+%        \item Torch\footnote{Wall et al. (2019, 2020)} couples N-body, stellar evolution, and feedback in \texttt{AMUSE}\footnote{Portegies Zwart et al. (2009), (2013); Pelupessy et al. (2013); Portegies Zwart \& McMillan (2019)} \\ with self-gravitating magnetized gas in MHD code \texttt{FLASH}.\footnote{Fryxell et al. (2000)}
+%        \item []
+%        }
+%        \only<1>{\item [] \item[] \item [] \item []}
+%        \only<2,3>{
+%        \item Resolved dynamics of stars and gas; study star cluster formation within collapsing GMCs.
+%        \item []
+%        }
+%        \only<2>{\item [] \item []}
+%        \only<3>{
+%        \item Form stars from sink particles which each have a randomized star mass list sampled from the Kroupa IMF.\footnote{Kroupa (2001)}
+%        }
+%    \end{itemize}
+%\end{frame}
 
 %    \let\thefootnote\relax\footnotetext{\texttt{AMUSE} - Portegies Zwart et al. 2009, 2013; Pelupessy et al. 2013; Portegies Zwart \& McMillan 2019}
 %    \let\thefootnote\relax\footnotetext{\texttt{FLASH} - Fryxell et al. 2000}
 
 
-\section{Lewis et al. 2023}
-\begin{frame}{A Controlled Experiment}{}
+\section{Lewis et al. (2023)}
+\begin{frame}{A Controlled Experiment}{Using \texttt{Torch} computational framework}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/density_grid.png} \\
-                Lewis et al. 2023
+                Lewis et al. (2023)
                 \label{fig:density}
             \end{figure}
         \end{column}
@@ -101,16 +102,16 @@
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/paper1-snapshot-volume-render.png} \\
-		.
+		Gas density contours
                 \label{fig:volume}
             \end{figure}
         \end{column}
     \end{columns}
 \end{frame} 
 
-\section{Lewis et al. 2023}
+\section{Lewis et al. (2023)}
 
-\begin{frame}{Effects on Gas Energy}{}
+\begin{frame}{Early Forming Massive Stars Rapidly Unbind GMC}{}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
@@ -130,7 +131,7 @@
 \end{frame} 
 
 
-\begin{frame}{Effects on Gas Accretion and Star Formation}{}
+\begin{frame}{Early Forming Massive Stars Suppress Gas Accretion and Star Formation}{}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
@@ -149,7 +150,7 @@
     \end{columns}
 \end{frame} 
 
-\begin{frame}{Effects on Gas Accretion and Star Formation}{}
+\begin{frame}{Early Forming Massive Stars Suppress Gas Accretion and Star Formation}{}
     \begin{columns}
         \begin{column}{0.42\textwidth}
             \begin{figure}[h!]
@@ -181,7 +182,7 @@
 
 
 
-\begin{frame}{Effects on Star Clustering, Cluster Assembly}{}
+\begin{frame}{Early Forming Massive Stars Promote Formation of Fragmented, Low Mass, Loosely Bound Clusters}{}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}[h!]
@@ -192,10 +193,12 @@
         \end{column}
         \begin{column}{0.45\textwidth}
             \begin{itemize}
-              \only<2,3>{\item DBSCAN to identify cluster with at least 50\% bound members and 100~M$_\odot$ at 2$\tau_{\rm ff}$.}
-              \only<1>{\item [] \item [] \item [] \item [] \item [] \item []}
-              \only<2>{\item [] \item [] \item []}
-              \only<3>{\item Clusters in runs with early massive stars are less massive and more fragmented compared to the fiducial run.}
+              %\only<2,3>{\item DBSCAN to identify cluster with at least 50\% bound members and 100~M$_\odot$ at 2$\tau_{\rm ff}$.}
+              \only<2,3>{\item Low mass and spatially distinct clusters.}
+              \only<1>{\item [] \item [] \item []}
+              \only<2>{\item []}
+              %\only<3>{\item Clusters in runs with early massive stars are less massive and more fragmented compared to the fiducial run.}
+              \only<3>{\item Loosely bound; more unassociated stars.}
             \end{itemize}
             \only<1,2,3>{
 	    \begin{table}[!htb]
@@ -225,7 +228,7 @@
 \begin{frame}{Effects of Early Forming Massive Stars}{}
     \begin{itemize}
         \only<1,2,3>{
-        \item Significantly disrupt the natal gas structure, resulting in premature unbinding of GMC.
+        \item Significantly disrupt the natal gas structure, resulting in earlier unbinding of GMC.
         \item []
         }
         \only<1>{\item [] \item [] \item [] \item [] \item []}
@@ -241,29 +244,38 @@
     \end{itemize}
 \end{frame}
 
+
 %
 %
 %
-\section{Realistic Initial Conditions}
+
+\section{~}
+\begin{frame}{In the Pursuit of a Self-Consistent Star Formation Simulation}
+\begin{figure}[h!]
+	      \centering
+	      \includegraphics[width=0.9\linewidth]{../images/research_test.png} 
+	\end{figure}
+\end{frame}
 %
 %
 %
 %
 % 
+\section{Realistic Initial Conditions}
 \begin{frame}{The Problem with Initial Conditions}{}
-    	\only<1>{
+    	\only<3>{
 	\begin{figure}[h!]
 	      \centering
 	      \includegraphics[width=0.7\linewidth]{../images/clouds.png} 
 	\end{figure}
 	}
-    \only<2,3>{
+    \only<1,2>{
     \begin{itemize}
-        \only<2,3>{\item Self consistent galactic scale simulations with resolution down to sub-tenth parsec scales and include Nbody individual stellar dynamics and individual stellar feedback all at once? A little tough.
+        \only<1,2>{\item Prohibitively large spatial scales...
         \item []
         }
-        \only<2>{\item []}
-        \only<3>{\item Creating our own isolated clouds from scratch? ``Creative liberties..."}
+        \only<1>{\item []}
+        \only<2>{\item Lead to ``creative liberties..."}
         % Like ignoring the galactic environment, starting from spherical or cylindrical conditions.
     \end{itemize}
     }
@@ -294,7 +306,7 @@
 	\begin{figure}[h!]
                 \centering
                 \includegraphics[width=\linewidth]{../images/AREPO_galaxy.png} \\
-                GMC identification\footnote{Li, H. et al. 2020}
+                GMC identification\footnote{Li, H. et al. (2020)}
                 \label{fig:arepo_galaxy}
 	\end{figure}
 	% Also have Cloud-Factory Rowen Smith (2019)
@@ -439,7 +451,7 @@
 	}
 	\only<2>{\item []}
 	\only<3>{
-	\item Provides an avenue for increased collaboration between entrenched research groups.
+	\item Provides an avenue for increased collaboration between research groups using different methods.
 	}
         % With Torch, we can already do the last two points.
         % So what we really need are some clouds from galactic simulations
@@ -450,18 +462,18 @@
 %
 %
 %
-\begin{frame}{}
-	\centering Thank You! \\ - \\ Questions? \\
-	~ \\
-	\includegraphics[width=0.5cm]{../images/twitter_icon.jpeg}~ @sean\_phys \\
-	 \includegraphics[width=0.5cm]{../images/gmail_icon.jpeg}~ sean.phys@gmail.com
-\end{frame}
+%\begin{frame}{}
+%	\centering Thank You! \\ - \\ Questions? \\
+%	~ \\
+%	\includegraphics[width=0.5cm]{../images/twitter_icon.jpeg}~ @sean\_phys \\
+%	 \includegraphics[width=0.5cm]{../images/gmail_icon.jpeg}~ sean.phys@gmail.com
+%\end{frame}
 
-\begin{frame}{Appendix}
-	\begin{equation}\label{eqn:sfe}
-		\epsilon_{\text{ff}} = \dot{M}_{*}\frac{t_{\text{ff}}}{M_{\text{g}}}
-	\end{equation}
-\end{frame}
+%\begin{frame}{Appendix}
+%	\begin{equation}\label{eqn:sfe}
+%		\epsilon_{\text{ff}} = \dot{M}_{*}\frac{t_{\text{ff}}}{M_{\text{g}}}
+%	\end{equation}
+%\end{frame}
 
 \end{document}
 
